@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # packages
+    'rest_framework',
 
     # custom apps
     'base',
@@ -110,6 +112,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# This helps define that we are going to use the static folder at the root dir to
+# store all of our static files... js, css and images
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+
+# then for instances when you want to store images that have been uploaded by the user,
+# you'd have to use STATIC_ROOT below...
+STATIC_ROOT = []
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
